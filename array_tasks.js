@@ -1,7 +1,7 @@
 var arrayTasks = {
 
 	concat: function (arr1, arr2) {
-		newArray = [];
+		var newArray = [];
 		for(var item of arr1){
 			newArray.push(item);
 		}
@@ -17,20 +17,24 @@ var arrayTasks = {
 	},
 
 	square: function (arr) {
-		newArray = [];
+		var newArray = [];
 		arr.forEach(function(element){
 			newArray.push(element * element);
 		})
 		return newArray;
 	},
 
-	// sum: function (arr) {
-		
-	// },
+	sum: function (arr) {
+		var total = 0;
+		arr.forEach(function(element){
+			total += element;
+		})
+		return total;
+	},
 
-	// findDuplicates: function (arr) {
+	findDuplicates: function (arr) {
 		
-	// },
+	},
 
 	// removeAndClone: function (arr, valueToRemove) {
 		
