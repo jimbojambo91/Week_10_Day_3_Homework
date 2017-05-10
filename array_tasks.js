@@ -33,20 +33,46 @@ var arrayTasks = {
 	},
 
 	findDuplicates: function (arr) {
-		
+		var newArray = [];
+		for (var i = 0; i < arr.length -1; i++){
+			if(arr[i +1] === arr[i]){
+				if(!newArray.includes(arr[i])){
+					newArray.push(arr[i]);
+				}
+			}
+		}
+		return newArray;
 	},
 
-	// removeAndClone: function (arr, valueToRemove) {
-		
-	// },
+	removeAndClone: function (arr, valueToRemove) {
+		var newArray = arr.filter(function(element){
+			return element != valueToRemove;
+		})
+		return newArray;
+	},
 
-	// findIndexesOf: function (arr, itemToFind) {
-		
-	// },
+	findIndexesOf: function (arr, itemToFind) {
+		var indexes = [];
+		for (var index = 0; index < arr.length; index ++){
+			if(arr[index] === itemToFind){
+				indexes.push(index);
+			}
+		}
+		return indexes;
+	},
 
-	// sumOfAllEvenNumbersSquared: function (arr) {
-		
-	// }
+	sumOfAllEvenNumbersSquared: function (arr) {
+		var evenNums = arr.filter(function(element){
+			if(element % 2 == 0){
+				return element;
+			} 
+		})
+		var total = 0;
+		evenNums.forEach(function(element){
+			total += (element * element);
+		})
+		return total;
+		}
 
 }
 
